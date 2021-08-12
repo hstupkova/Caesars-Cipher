@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Record Collection</title>
+  </head>
+  <body>
+    <h1>Look into a console</h1>
+
+    <script>
+      const cipher = {
+        "A": "N",
+        "B": "O",
+        "C": "P",
+        "D": "Q",
+        "E": "R",
+        "F": "S",
+        "G": "T",
+        "H": "U",
+        "I": "V",
+        "J": "W",
+        "K": "X",
+        "L": "Y",
+        "M": "Z",
+        "N": "A",
+        "O": "B",
+        "P": "C",
+        "Q": "D",
+        "R": "E",
+        "S": "F",
+        "T": "G",
+        "U": "H",
+        "V": "I",
+        "W": "J",
+        "X": "K",
+        "Y": "L",
+        "Z": "M",
+      }
+
+      function rot13(str) {
+        const arr = str.split('');
+        const newArr = [];
+        for (let i = 0; i < arr.length; i++) {
+          if (cipher.hasOwnProperty(arr[i])) {
+            newArr.push(cipher[arr[i]]);
+          } else {
+            newArr.push(arr[i]);
+          }
+        }
+        return newArr.join('');
+      }
+
+      console.log(rot13("SERR PBQR PNZC"));
+      console.log(rot13("SERR CVMMN!"));
+      console.log(rot13("SERR YBIR?"));
+      console.log(rot13("GUR DHVPX OEBJA SBK WHZCF BIRE GUR YNML QBT."));
+
+    </script>
+  </body>
+</html>
